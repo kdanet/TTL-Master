@@ -1,0 +1,15 @@
+C:\Users\Danet\Desktop\Tethering\bin\Release\Tethering.exe.config
+C:\Users\Danet\Desktop\Tethering\bin\Release\Tethering.exe
+C:\Users\Danet\Desktop\Tethering\bin\Release\Tethering.pdb
+C:\Users\Danet\Desktop\Tethering\obj\Release\Tethering.exe
+C:\Users\Danet\Desktop\Tethering\obj\Release\Tethering.pdb
+D:\C#\Tethering\bin\Release\Tethering.exe.config
+D:\C#\Tethering\bin\Release\Tethering.exe
+D:\C#\Tethering\bin\Release\Tethering.pdb
+D:\C#\Tethering\bin\Release\JetBrains.Annotations.dll
+D:\C#\Tethering\bin\Release\WenceyWang.FIGlet.dll
+D:\C#\Tethering\bin\Release\JetBrains.Annotations.xml
+D:\C#\Tethering\obj\Release\Tethering.csprojAssemblyReference.cache
+D:\C#\Tethering\obj\Release\Tethering.csproj.CopyComplete
+D:\C#\Tethering\obj\Release\Tethering.exe
+D:\C#\Tethering\obj\Release\Tethering.pdb
