@@ -21,15 +21,35 @@ namespace Tethering
                 Console.WriteLine(" 2) Раздача с Android или IOS по Wi-Fi по USB");
                 Console.WriteLine(" 3) Раздача с других OS по Wi-Fi");
                 Console.WriteLine(" 4) Раздача с других OS по USB");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(" 5) Установка своего значения TTL");
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(" 5) Выход в меню...\n");
+                Console.WriteLine(" 6) Выход в меню...\n");
                 Console.ResetColor();
                 int x = int.Parse(Console.ReadLine());
                 if (x == 1) { logic.Save(65); return 2; }
                 else if (x == 2) { logic.Save(64); return 2; }
                 else if (x == 3) { logic.Save(130); return 2; }
                 else if (x == 4) { logic.Save(129); return 2; }
-                else if (x == 5) { return 0; }
+                else if (x == 5)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Введите своё значение TTL");
+                    try
+                    {
+                        int y = int.Parse(Console.ReadLine());
+                        logic.Save(y);
+                        return 2;
+                    }
+                    catch
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("ОШИБКА: Введите валидное значение TTL");
+                        Console.ResetColor();
+                        return 0;
+                    }
+                }
+                else if (x == 6) { return 0; }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -115,19 +135,18 @@ namespace Tethering
 
 
             logic = new BusinnesLogic(new DataSource());
-            var file=File.Open("log.txt", FileMode.OpenOrCreate);
+            //Блок проверки,что программа запускается первый раз,запись в файл.
+            var file = File.Open("log.txt", FileMode.OpenOrCreate);
             using (var stream = new StreamReader(file))
             using (var wr = new StreamWriter(file))
             {
                 string str = stream.ReadLine();
-                if (str==null)
+                if (str == null)
                 {
                     logic.Save(65);
                     wr.Write("1");
                 }
-                
             }
-            logic.Save(65);
             while (true)
             {
                 var text = new WenceyWang.FIGlet.AsciiArt("by    kdanet");
